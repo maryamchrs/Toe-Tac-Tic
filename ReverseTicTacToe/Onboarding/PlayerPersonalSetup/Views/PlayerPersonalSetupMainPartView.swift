@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PlayerPersonalSetupMainPartView<ViewModel: PlayerPersonalSetupViewModel>: View {
     
-    //MARK: - Properties and Constants
+    // MARK: - Properties and Constants
     @ObservedObject var viewModel: PlayerPersonalSetupViewModel
     private let lightTertiary: Color = Color.tertiary.opacity(0.3)
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         VStack(spacing: 16) {
             LogoAndTitleView()
@@ -45,7 +45,7 @@ struct PlayerPersonalSetupMainPartView<ViewModel: PlayerPersonalSetupViewModel>:
     }
 }
 
-//MARK: Private
+// MARK: Private
 private extension PlayerPersonalSetupMainPartView {
     var optionView: some View {
         HStack(spacing: 12) {
@@ -77,7 +77,7 @@ private extension PlayerPersonalSetupMainPartView {
     }
 }
 
-//MARK: - Preview
+// MARK: - Preview
 #Preview {
     PlayerPersonalSetupMainPartView(viewModel: PlayerPersonalSetupViewModel(storageManager: StorageManager()))
 }

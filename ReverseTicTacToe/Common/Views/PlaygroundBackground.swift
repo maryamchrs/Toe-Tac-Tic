@@ -41,7 +41,7 @@ private extension PlaygroundBackground {
         }
     }
     
-    var oIconView:  some View {
+    var oIconView: some View {
         GeometryReader { geometry in
             Image("HalfO")
                 .padding(.top, topPaddingOfOImage)
@@ -104,7 +104,6 @@ private extension PlaygroundBackground {
         }
     }
 }
-
 
 #Preview {
     PlaygroundBackground()

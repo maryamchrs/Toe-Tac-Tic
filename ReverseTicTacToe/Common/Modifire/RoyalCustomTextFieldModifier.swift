@@ -11,7 +11,7 @@ struct RoyalCustomTextFieldModifier: ViewModifier {
     var foregroundColor: Color
     
     func body(content: Content) -> some View {
-        ZStack() {
+        ZStack {
             content
                 .autocorrectionDisabled()
                 .foregroundColor(foregroundColor)

@@ -21,7 +21,7 @@ extension GamePiece {
     }
 }
 
-//MARK: - Color
+// MARK: - Color
 extension GamePiece {
     /// Returns the color based on the Piece
     var relatedColor: Color {

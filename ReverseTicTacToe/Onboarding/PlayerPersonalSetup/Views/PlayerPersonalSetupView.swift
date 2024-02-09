@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PlayerPersonalSetupView: View {
     
-    //MARK: - Properties and Constants
+    // MARK: - Properties and Constants
     @EnvironmentObject var coordinator: Coordinator
     @ObservedObject var viewModel: PlayerPersonalSetupViewModel
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         ZStack {
             PlaygroundBackground()
@@ -35,7 +35,7 @@ struct PlayerPersonalSetupView: View {
     }
 }
 
-//MARK: - Preview
+// MARK: - Preview
 #Preview {
     PlayerPersonalSetupView(viewModel: PlayerPersonalSetupViewModel(storageManager: StorageManager()))
 }

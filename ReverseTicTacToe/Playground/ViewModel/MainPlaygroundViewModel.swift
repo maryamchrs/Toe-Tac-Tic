@@ -32,7 +32,7 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
         case someoneLost
         case someoneWon
         case gameFinished
-        case waiting(playerNickName: String, piece:String)
+        case waiting(playerNickName: String, piece: String)
         case noOneWonTheGame
         
         var description: String {
@@ -53,8 +53,8 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
         }
     }
     
-    //MARK: - Properties and Outlet
-    //MARK: Public
+    // MARK: - Properties and Outlet
+    // MARK: Public
     @Published var titleMessage: String = ""
     @Published var message: String = ""
     @Published var currentPlayer: Player = .user
@@ -63,13 +63,13 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
     var playerSelectedPiece: GamePiece
     var playerNickName: String
     
-    //MARK: Private
+    // MARK: Private
     private let winningStates = Constants.winingStates
     private var userMoves: [Int] = []
     private var userOpponentMoves: [Int] = []
     private var isGameFinished: Bool = false
     
-    //MARK: - ViewModel cycle
+    // MARK: - ViewModel cycle
     init(playerNickName: String, playerSelectedPiece: GamePiece) {
         Logger.log(text: "MainPlaygroundViewModel is inited.")
         self.playerNickName = playerNickName
@@ -81,7 +81,7 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
     }
 }
 
-//MARK: - Public Methods
+// MARK: - Public Methods
 extension MainPlaygroundViewModel {
     func showStartingMessage() {
         message = Message.waiting(playerNickName: playerNickName,
@@ -120,7 +120,7 @@ extension MainPlaygroundViewModel {
     }
 }
 
-//MARK: - Private Methods
+// MARK: - Private Methods
 private extension MainPlaygroundViewModel {
     
     func makeMoveForBot() async {

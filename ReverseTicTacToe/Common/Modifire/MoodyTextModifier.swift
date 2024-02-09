@@ -11,7 +11,7 @@ struct MoodyTextModifier: ViewModifier {
     var fontSize: CGFloat
     
     func body(content: Content) -> some View {
-        ZStack() {
+        ZStack {
             content
                 .font(.moody(ofSize: fontSize))
                 .foregroundColor(.black)

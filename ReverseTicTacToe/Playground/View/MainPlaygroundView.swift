@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MainPlaygroundView<ViewModel: MainPlaygroundViewModelProtocol>: View {
     
-    //MARK: - Properties and Constants
+    // MARK: - Properties and Constants
     @EnvironmentObject var coordinator: Coordinator
     @ObservedObject var viewModel: ViewModel
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         ZStack {
             PlaygroundBackground(opacity: 0.1)
@@ -38,7 +38,7 @@ struct MainPlaygroundView<ViewModel: MainPlaygroundViewModelProtocol>: View {
             .padding(.top, Constants.topSpacing)
             .padding(.bottom, 16)
         }
-        .onAppear() {
+        .onAppear {
             viewModel.showStartingMessage()
         }
         .ignoresSafeArea(edges: [.horizontal])
@@ -46,7 +46,7 @@ struct MainPlaygroundView<ViewModel: MainPlaygroundViewModelProtocol>: View {
     }
 }
 
-//MARK: - Private Methods and Properties
+// MARK: - Private Methods and Properties
 private extension MainPlaygroundView {
     var board: some View {
         VStack(spacing: 16) {
@@ -84,6 +84,6 @@ private extension MainPlaygroundView {
     }
 }
 
-//#Preview {
+// #Preview {
 //    MainPlaygroundView(viewModel: MainPlaygroundViewModel(playerNickName: "", playerSelectedPiece: .oPiece))
-//}
+// }

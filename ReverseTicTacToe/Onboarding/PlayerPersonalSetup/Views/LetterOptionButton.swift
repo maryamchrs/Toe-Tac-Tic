@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LetterOptionButton: View {
     
-    //MARK: - Properties and Constants
+    // MARK: - Properties and Constants
     var text: GamePiece
     var isChosen: Bool
     var completionHandler: ((GamePiece) -> Void)?
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         
         Group {
@@ -48,14 +48,14 @@ struct LetterOptionButton: View {
     }
 }
 
-//MARK: - Private Methods
+// MARK: - Private Methods
 private extension LetterOptionButton {
     func getCorrectColor() -> Color {
         !isChosen ? text.relatedColor.opacity(0.2) : text.relatedColor
     }
 }
 
-//MARK: - Preview
+// MARK: - Preview
 #Preview {
     LetterOptionButton(text: .xPiece, isChosen: false)
 }

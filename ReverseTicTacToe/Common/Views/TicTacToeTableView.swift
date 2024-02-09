@@ -80,8 +80,7 @@ private extension TicTacToeTableView {
                 path.addLine(to: CGPoint(x: oneThirdOfWidth, y: height))
             }
             .stroke(.black, lineWidth: 2)
-            
-            
+        
             Path { path in
                 path.move(to: CGPoint(x: twoThirdOfWidth, y: 0))
                 path.addLine(to: CGPoint(x: twoThirdOfWidth, y: 0))

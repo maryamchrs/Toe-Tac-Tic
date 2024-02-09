@@ -10,13 +10,13 @@ import SwiftUI
 struct BoxesView<ViewModel: MainPlaygroundViewModelProtocol>: View {
     
     @ObservedObject var viewModel: ViewModel
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     let horizontalSpace: CGFloat = 38
     let verticalSpace: CGFloat = 39
     
     var foregroundStyleColor: Color = .lightBackgroundGray
     
-    //MARK: - View
+    // MARK: - View
     var body: some View {
         VStack(spacing: verticalSpace) {
             makeHorizontalBoxes(Array(viewModel.boxesInfo.prefix(3)))
