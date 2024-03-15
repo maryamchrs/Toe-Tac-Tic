@@ -23,7 +23,7 @@
 		5C3744832AE7DF3900DCAC50 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744822AE7DF3900DCAC50 /* CustomButton.swift */; };
 		5C3744852AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744842AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift */; };
 		5C3744882AE7E60B00DCAC50 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744872AE7E60B00DCAC50 /* UserDefaults+Extension.swift */; };
-		5C37448B2AE7E64900DCAC50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37448A2AE7E64900DCAC50 /* Logger.swift */; };
+		5C37448B2AE7E64900DCAC50 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37448A2AE7E64900DCAC50 /* CustomLogger.swift */; };
 		5C37448D2AE7E73000DCAC50 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37448C2AE7E73000DCAC50 /* StorageManager.swift */; };
 		5C37448F2AE7E83E00DCAC50 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37448E2AE7E83E00DCAC50 /* AppCoordinator.swift */; };
 		5C3744952AE7EE0300DCAC50 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744942AE7EE0300DCAC50 /* ViewFactory.swift */; };
@@ -83,7 +83,7 @@
 		5C3744822AE7DF3900DCAC50 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5C3744842AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 		5C3744872AE7E60B00DCAC50 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		5C37448A2AE7E64900DCAC50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		5C37448A2AE7E64900DCAC50 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		5C37448C2AE7E73000DCAC50 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		5C37448E2AE7E83E00DCAC50 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5C3744942AE7EE0300DCAC50 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		5C3744892AE7E63D00DCAC50 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				5C37448A2AE7E64900DCAC50 /* Logger.swift */,
+				5C37448A2AE7E64900DCAC50 /* CustomLogger.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 				5CE458282AE9532F00A83222 /* RoyalCustomTextFieldModifier.swift in Sources */,
 				5C37448F2AE7E83E00DCAC50 /* AppCoordinator.swift in Sources */,
 				5C3744852AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift in Sources */,
-				5C37448B2AE7E64900DCAC50 /* Logger.swift in Sources */,
+				5C37448B2AE7E64900DCAC50 /* CustomLogger.swift in Sources */,
 				B7F0E8062B052744001C9C75 /* View+Extension.swift in Sources */,
 				B77B57AF2B01317E00DAABC9 /* MainPlaygroundViewModel.swift in Sources */,
 				5C3744642AE7C2FD00DCAC50 /* YellowishGradientView.swift in Sources */,

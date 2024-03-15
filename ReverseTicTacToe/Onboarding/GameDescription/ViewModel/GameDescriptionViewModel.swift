@@ -15,11 +15,11 @@ final class GameDescriptionViewModel: ObservableObject {
     
     // MARK: - LifeTime of Class
     init(storageManager: StorageManager) {
-        Logger.log(text: "OnboardingViewModel was inited.")
+        CustomLogger.log(text: "OnboardingViewModel was inited.")
         self.storageManager = storageManager
     }
     
     deinit {
-        Logger.log(text: "OnboardingViewModel was deinited.")
+        CustomLogger.log(text: "OnboardingViewModel was deinited.")
     }
 }

@@ -24,14 +24,14 @@ final class PlayerPersonalSetupViewModel: ObservableObject {
     
     // MARK: - LifeTime of Class
     init(storageManager: StorageManager) {
-        Logger.log(text: "PlayerPersonalSetupViewModel was inited.")
+        CustomLogger.log(text: "PlayerPersonalSetupViewModel was inited.")
         self.storageManager = storageManager
         startObservers()
     }
     
     deinit {
         bag.removeAll()
-        Logger.log(text: "PlayerPersonalSetupViewModel was deinited.")
+        CustomLogger.log(text: "PlayerPersonalSetupViewModel was deinited.")
     }
 }
 

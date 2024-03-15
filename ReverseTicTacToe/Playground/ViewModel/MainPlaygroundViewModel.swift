@@ -71,13 +71,13 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
     
     // MARK: - ViewModel cycle
     init(playerNickName: String, playerSelectedPiece: GamePiece) {
-        Logger.log(text: "MainPlaygroundViewModel is inited.")
+        CustomLogger.log(text: "MainPlaygroundViewModel is inited.")
         self.playerNickName = playerNickName
         self.playerSelectedPiece = playerSelectedPiece
     }
     
     deinit {
-        Logger.log(text: "MainPlaygroundViewModel is deinited.")
+        CustomLogger.log(text: "MainPlaygroundViewModel is deinited.")
     }
 }
 

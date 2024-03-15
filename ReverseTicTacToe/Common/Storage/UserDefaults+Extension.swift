@@ -31,7 +31,7 @@ private extension UserDefaults {
             let data = try encoder.encode(object)
             set(data, forKey: forKey)
         } catch let encodeErr {
-            Logger.log(text: "Failed to encode object: \(encodeErr)")
+            CustomLogger.log(text: "Failed to encode object: \(encodeErr)")
         }
     }
         
@@ -42,7 +42,7 @@ private extension UserDefaults {
             let object = try decoder.decode(type, from: data)
             return object
         } catch let decodeError {
-            Logger.log(text: "Failed to decode object: \(decodeError)")
+            CustomLogger.log(text: "Failed to decode object: \(decodeError)")
             return nil
         }
     }
