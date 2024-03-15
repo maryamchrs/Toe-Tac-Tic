@@ -23,15 +23,15 @@ class CustomLogger {
                                        category: "ToeTacTic")
     
     class func logInit(owner: String) {
-        logger.log("LifeCycle + ---> + \(owner, privacy: .public) +  init")
+        logger.debug("LifeCycle + ---> + \(owner, privacy: .public) +  init")
     }
     
     class func logDeinit(owner: String) {
-        logger.log("LifeCycle + ---> + \(owner, privacy: .public) +  deinit")
+        logger.debug("LifeCycle + ---> + \(owner, privacy: .public) +  deinit")
     }
     
     class func log(text: String) {
-        logger.log("\(text, privacy: .public)")
+        logger.debug("\(text, privacy: .public)")
     }
 }
 
