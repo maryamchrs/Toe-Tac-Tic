@@ -4,11 +4,5 @@
 <dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Cupcake.ttf</string>
-		<string>Sweety.otf</string>
-		<string>Moody.otf</string>
-	</array>
 </dict>
 </plist>

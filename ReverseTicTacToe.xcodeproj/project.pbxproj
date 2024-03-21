@@ -15,11 +15,7 @@
 		5C3744642AE7C2FD00DCAC50 /* YellowishGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744632AE7C2FD00DCAC50 /* YellowishGradientView.swift */; };
 		5C3744672AE7C6B800DCAC50 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C3744692AE7C6B800DCAC50 /* Localizable.strings */; };
 		5C37446B2AE7C7FA00DCAC50 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37446A2AE7C7F900DCAC50 /* String+Extension.swift */; };
-		5C37446F2AE7CB5800DCAC50 /* Moody.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C37446E2AE7CB5800DCAC50 /* Moody.otf */; };
-		5C3744772AE7CDA700DCAC50 /* Sweety.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C3744752AE7CDA700DCAC50 /* Sweety.otf */; };
-		5C37447B2AE7CDB200DCAC50 /* Cupcake.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C3744792AE7CDB200DCAC50 /* Cupcake.ttf */; };
 		5C37447E2AE7D38900DCAC50 /* Font+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C37447D2AE7D38900DCAC50 /* Font+extension.swift */; };
-		5C3744812AE7DA1F00DCAC50 /* MoodyTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744802AE7DA1F00DCAC50 /* MoodyTextModifier.swift */; };
 		5C3744832AE7DF3900DCAC50 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744822AE7DF3900DCAC50 /* CustomButton.swift */; };
 		5C3744852AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744842AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift */; };
 		5C3744882AE7E60B00DCAC50 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3744872AE7E60B00DCAC50 /* UserDefaults+Extension.swift */; };
@@ -74,12 +70,8 @@
 		5C3744632AE7C2FD00DCAC50 /* YellowishGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowishGradientView.swift; sourceTree = "<group>"; };
 		5C3744682AE7C6B800DCAC50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C37446A2AE7C7F900DCAC50 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		5C37446E2AE7CB5800DCAC50 /* Moody.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moody.otf; sourceTree = "<group>"; };
-		5C3744752AE7CDA700DCAC50 /* Sweety.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sweety.otf; sourceTree = "<group>"; };
-		5C3744792AE7CDB200DCAC50 /* Cupcake.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cupcake.ttf; sourceTree = "<group>"; };
 		5C37447C2AE7CE5700DCAC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5C37447D2AE7D38900DCAC50 /* Font+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+extension.swift"; sourceTree = "<group>"; };
-		5C3744802AE7DA1F00DCAC50 /* MoodyTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodyTextModifier.swift; sourceTree = "<group>"; };
 		5C3744822AE7DF3900DCAC50 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5C3744842AE7E4CA00DCAC50 /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 		5C3744872AE7E60B00DCAC50 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -179,7 +171,6 @@
 		5C0061372AE7BD1900E3EA59 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
-				B70BF4EE2B54531B007B81FD /* Model */,
 				B70BF4EF2B545321007B81FD /* View */,
 				B70BF4F02B545328007B81FD /* ViewModel */,
 			);
@@ -206,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				5C37445F2AE7C1DF00DCAC50 /* Extensions */,
-				5C37446C2AE7CB4100DCAC50 /* Fonts */,
 				5C3744892AE7E63D00DCAC50 /* Logger */,
 				B775DDD62B000AF3006B737E /* Models */,
 				5C37447F2AE7D9CF00DCAC50 /* Modifire */,
@@ -245,36 +235,9 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5C37446C2AE7CB4100DCAC50 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				5C3744732AE7CD7300DCAC50 /* Cupcake */,
-				5C37446D2AE7CB4C00DCAC50 /* Moody */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		5C37446D2AE7CB4C00DCAC50 /* Moody */ = {
-			isa = PBXGroup;
-			children = (
-				5C37446E2AE7CB5800DCAC50 /* Moody.otf */,
-			);
-			path = Moody;
-			sourceTree = "<group>";
-		};
-		5C3744732AE7CD7300DCAC50 /* Cupcake */ = {
-			isa = PBXGroup;
-			children = (
-				5C3744792AE7CDB200DCAC50 /* Cupcake.ttf */,
-				5C3744752AE7CDA700DCAC50 /* Sweety.otf */,
-			);
-			path = Cupcake;
-			sourceTree = "<group>";
-		};
 		5C37447F2AE7D9CF00DCAC50 /* Modifire */ = {
 			isa = PBXGroup;
 			children = (
-				5C3744802AE7DA1F00DCAC50 /* MoodyTextModifier.swift */,
 				5CE458272AE9532F00A83222 /* RoyalCustomTextFieldModifier.swift */,
 			);
 			path = Modifire;
@@ -305,13 +268,6 @@
 				5C3744942AE7EE0300DCAC50 /* ViewFactory.swift */,
 			);
 			path = AppCoordinator;
-			sourceTree = "<group>";
-		};
-		B70BF4EE2B54531B007B81FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B70BF4EF2B545321007B81FD /* View */ = {
@@ -493,10 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C37446F2AE7CB5800DCAC50 /* Moody.otf in Resources */,
 				5C37445B2AE7BED100DCAC50 /* Preview Assets.xcassets in Resources */,
-				5C37447B2AE7CDB200DCAC50 /* Cupcake.ttf in Resources */,
-				5C3744772AE7CDA700DCAC50 /* Sweety.otf in Resources */,
 				5C3744672AE7C6B800DCAC50 /* Localizable.strings in Resources */,
 				5C00612C2AE7BC9D00E3EA59 /* Assets.xcassets in Resources */,
 			);
@@ -566,7 +519,6 @@
 				B70BF4ED2B5451AA007B81FD /* BoxInfo.swift in Sources */,
 				B7F971372B46DF69000C9EF3 /* Destination.swift in Sources */,
 				5C37446B2AE7C7FA00DCAC50 /* String+Extension.swift in Sources */,
-				5C3744812AE7DA1F00DCAC50 /* MoodyTextModifier.swift in Sources */,
 				B775DDD12AFFF570006B737E /* BoxesView.swift in Sources */,
 				5C3744612AE7C1F600DCAC50 /* UIColor+Extension.swift in Sources */,
 				5C37448D2AE7E73000DCAC50 /* StorageManager.swift in Sources */,
