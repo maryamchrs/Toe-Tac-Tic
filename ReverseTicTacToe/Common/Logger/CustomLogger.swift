@@ -31,7 +31,7 @@ class CustomLogger {
     }
     
     class func log(text: String) {
-        logger.debug("\(text, privacy: .public)")
+        logger.debug("\(text, privacy: .private)")
     }
 }
 
