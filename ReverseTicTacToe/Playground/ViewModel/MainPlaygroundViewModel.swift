@@ -38,17 +38,17 @@ final class MainPlaygroundViewModel: MainPlaygroundViewModelProtocol {
         var description: String {
             switch self {
             case .alreadyExists:
-                "this_bos_is_already_selected".localize
+                "this_bos_is_already_selected".localized()
             case .someoneLost:
-                "losing_message_description".localize
+                "losing_message_description".localized()
             case .someoneWon:
-                "wining_message_description".localize
+                "wining_message_description".localized()
             case .gameFinished:
-                "tied_game_message".localize
+                "tied_game_message".localized()
             case .waiting(let playerNickName, let piece):
-                "waiting_message".localizedWithArgs([playerNickName, piece])
+                "waiting_message".localized(withArgs: [playerNickName, piece])
             case .noOneWonTheGame:
-                "tied_game_message".localize
+                "tied_game_message".localized()
             }
         }
     }
@@ -93,7 +93,7 @@ extension MainPlaygroundViewModel {
             clearMessages()
             guard !isTheGameEnded() else { return }
             
-            if isAlreadyExists(index) {
+            if isMoveAlreadyExists(atIndex: index) {
                 message = Message.alreadyExists.description
                 return
             }
@@ -127,7 +127,7 @@ private extension MainPlaygroundViewModel {
         guard !isTheGameEnded() else { return }
         updateBoardEnablingStatus(false)
         let (safeMoves, possibleMoves) = availableMoves()
-        try? await Task.sleep(nanoseconds: Constants.delayOfThinking)
+        try? await Task.sleep(nanoseconds: Constants.delayOfThinkingInNanoseconds)
         
         let botIndex: Int = !safeMoves.isEmpty ? (safeMoves.randomElement()!) : (possibleMoves.randomElement()!)
         addMove(for: .userOpponent, index: botIndex)
@@ -181,22 +181,22 @@ private extension MainPlaygroundViewModel {
         isBoardEnable = status
     }
     
-    func isAlreadyExists(_ moveIndex: Int) -> Bool {
-        return userMoves.contains(where: {$0 == moveIndex}) || userOpponentMoves.contains(where: {$0 == moveIndex})
+    func isMoveAlreadyExists(atIndex moveIndex: Int) -> Bool {
+        return userMoves.contains(where: { $0 == moveIndex }) || userOpponentMoves.contains(where: { $0 == moveIndex })
     }
     
-    func checkIfSomeoneLostTheGame(currentPlayer: Player) -> (Bool, String, String) {
-        var moves: [Int] = []
-        var titleMessage: String = ""
-        var message: String = ""
+    func checkIfSomeoneLostTheGame(currentPlayer: Player) -> (isLostStatus: Bool, title: String, message: String) {
+        let moves: [Int]
+        let titleMessage: String
+        let message: String
         switch currentPlayer {
         case .user:
             moves = userMoves
-            titleMessage = "losing_message_title".localizedWithArgs([playerNickName])
+            titleMessage = "losing_message_title".localized(withArgs: [playerNickName])
             message = Message.someoneLost.description
         case .userOpponent:
             moves = userOpponentMoves
-            titleMessage = "wining_message_title".localizedWithArgs([playerNickName])
+            titleMessage = "wining_message_title".localized(withArgs: [playerNickName])
             message = Message.someoneWon.description
         }
         return (checkForBecomingLostStatus(moves: moves), titleMessage, message)
@@ -222,9 +222,9 @@ private extension MainPlaygroundViewModel {
     }
     
     func createBoxInfo(index: Int) {
-        if let indexToUpdate = boxesInfo.firstIndex(where: { $0.id == index }) {
-            boxesInfo[indexToUpdate] = BoxInfo(id: index, status: findRelatedStatusForBox())
-        }
+        guard let indexToUpdate = boxesInfo.firstIndex(where: { $0.id == index }) else { return }
+        
+        boxesInfo[indexToUpdate] = BoxInfo(id: index, status: findRelatedStatusForBox())
     }
     
     func findRelatedStatusForBox() -> GamePiece {
@@ -250,19 +250,18 @@ private extension MainPlaygroundViewModel {
     }
     
     func availableMoves() -> ([Int], [Int]) {
-        var moves: [Int] = (0..<9).map{$0}
-        moves = moves.removeCommonElements(secendArray: userMoves)
-        moves = moves.removeCommonElements(secendArray: userOpponentMoves)
-        var safeMoves = moves
+        let moves: [Int] = (0..<9).map { $0 }
+            .removingCommonElements(with: userMoves)
+            .removingCommonElements(with: userOpponentMoves)
         let movesToLeadUserSuccess = findOptionsWithProbabilityOfWinning(moves: userMoves)
         let movesToLeadBotSuccess = findOptionsWithProbabilityOfWinning(moves: userOpponentMoves)
         let wholeSuccessfulMoves = Array(Set(movesToLeadUserSuccess + movesToLeadBotSuccess))
-        safeMoves = safeMoves.filter { !wholeSuccessfulMoves.contains($0) }
+        let safeMoves = moves.filter { !wholeSuccessfulMoves.contains($0) }
         return (safeMoves, moves)
     }
     
     func checkForFinishingTheGame() -> Bool {
-        let wholeMoves = Array(Set(userMoves + userOpponentMoves))
-        return wholeMoves.count == 9 ? true : false
+        let wholeMoves = Set(userMoves + userOpponentMoves)
+        return wholeMoves.count == 9
     }
 }

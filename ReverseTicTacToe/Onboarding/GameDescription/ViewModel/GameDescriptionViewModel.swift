@@ -11,7 +11,7 @@ import Combine
 final class GameDescriptionViewModel: ObservableObject {
     
     let storageManager: StorageManager
-    var continueFlowPublisher = PassthroughSubject<Void, Never>()
+    let continueFlowSubject = PassthroughSubject<Void, Never>()
     
     // MARK: - LifeTime of Class
     init(storageManager: StorageManager) {

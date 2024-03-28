@@ -13,6 +13,17 @@ enum Player {
     case userOpponent
 }
 
+extension Player: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .user:
+            return "user"
+        case .userOpponent:
+            return "userOpponent"
+        }
+    }
+}
+
 /// Extension to provide additional functionality for the `Player` enum.
 extension Player {
     /// Returns the opponent  based on the player
@@ -22,15 +33,6 @@ extension Player {
             return .userOpponent
         case .userOpponent:
             return .user
-        }
-    }
-    
-    var description: String {
-        switch self {
-        case .user:
-            return "user"
-        case .userOpponent:
-            return "userOpponent"
         }
     }
 }

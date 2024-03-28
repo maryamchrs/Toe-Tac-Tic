@@ -27,9 +27,9 @@ extension GamePiece {
     var relatedColor: Color {
         switch self {
         case .xPiece:
-            return Color.lightFantasyGreen
+            return .lightFantasyGreen
         case .oPiece:
-            return Color.defaultPurple
+            return .defaultPurple
         }
     }
     
@@ -37,9 +37,9 @@ extension GamePiece {
     var relatedMessageColor: Color {
         switch self {
         case .xPiece:
-            return Color.darkFansyGreen
+            return .darkFansyGreen
         case .oPiece:
-            return Color.defaultPurple
+            return .defaultPurple
         }
     }
 }

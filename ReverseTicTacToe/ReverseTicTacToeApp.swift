@@ -15,7 +15,7 @@ struct ReverseTicTacToeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $coordinator.path) {
-                ViewFactory.MakeGameDescriptionView()
+                ViewFactory.makeGameDescriptionView()
                     .navigationDestination(for: Destination.self) { destination in
                         ViewFactory.createView(destination)
                     }

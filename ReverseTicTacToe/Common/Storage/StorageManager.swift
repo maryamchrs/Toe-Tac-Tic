@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol StorageManagerProtocol {
+protocol StorageManager {
     func getIsFirstOpen() -> Bool
     func setIsFirstOpenToFalse()
 }
 
-final class StorageManager: StorageManagerProtocol, ObservableObject {
+final class UserDefaultsBasedStorageManager: StorageManager, ObservableObject {
     func getIsFirstOpen() -> Bool { !UserDefaults.standard.isFirstOpen }
     func setIsFirstOpenToFalse() { UserDefaults.standard.isFirstOpen = true }
 }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Constants {
+enum Constants {
     
     static let topSpacing: CGFloat = 64
     
-    static let delayOfThinking: UInt64 = 1_000_000_000
+    static let delayOfThinkingInNanoseconds: UInt64 = 1_000_000_000
     
     static let winingStates = [
         [0, 1, 2],

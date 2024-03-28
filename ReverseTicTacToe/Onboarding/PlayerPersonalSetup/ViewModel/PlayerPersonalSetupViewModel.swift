@@ -15,10 +15,11 @@ final class PlayerPersonalSetupViewModel: ObservableObject {
     @Published var selectedPiece: GamePiece?
     @Published var isStartButtonEnable: Bool  = false
     
-    let storageManager: StorageManager
-    var startButtonPublisher = PassthroughSubject<Bool, Never>()
+    private let storageManager: StorageManager
+    private var startButtonSubject = PassthroughSubject<Void, Never>()
+    var startButtonPublisher: AnyPublisher<Void, Never> { startButtonSubject.eraseToAnyPublisher() }
     var selectedOption: GamePiece? {
-        return selectedPiece
+        selectedPiece
     }
     private var bag = Set<AnyCancellable>()
     
@@ -30,7 +31,6 @@ final class PlayerPersonalSetupViewModel: ObservableObject {
     }
     
     deinit {
-        bag.removeAll()
         CustomLogger.log(text: "PlayerPersonalSetupViewModel was deinited.")
     }
 }
@@ -42,7 +42,7 @@ extension PlayerPersonalSetupViewModel {
     }
     
     func startGameButtonIsTapped() {
-        startButtonPublisher.send(true)
+        startButtonSubject.send()
     }
 }
 // MARK: - Private Methods
