@@ -8,11 +8,7 @@
 import Foundation
 import OSLog
 
-protocol LoggerProtocol {
-    
-}
-
-class CustomLogger {
+enum CustomLogger {
     
     /*
      Subsystem is typically a bundle identifire which helps identify a message coming from your app.
@@ -22,15 +18,15 @@ class CustomLogger {
     private static var logger = Logger(subsystem: "com.demo.app.ReverseTicTacToe",
                                        category: "ToeTacTic")
     
-    class func logInit(owner: String) {
+    static func logInit(owner: String) {
         logger.debug("LifeCycle + ---> + \(owner, privacy: .public) +  init")
     }
     
-    class func logDeinit(owner: String) {
+    static func logDeinit(owner: String) {
         logger.debug("LifeCycle + ---> + \(owner, privacy: .public) +  deinit")
     }
     
-    class func log(text: String) {
+    static func log(text: String) {
         logger.debug("\(text, privacy: .private)")
     }
 }

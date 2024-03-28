@@ -15,5 +15,5 @@ struct BoxInfo {
 
 /// Establish the initial game state.
 extension BoxInfo {
-    static var initialStates: [BoxInfo] = (0..<9).map { BoxInfo(id: $0, status: nil) }
+    static let initialStates: [BoxInfo] = (0..<9).map { BoxInfo(id: $0, status: nil) }
 }

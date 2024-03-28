@@ -11,13 +11,13 @@ import Combine
 struct GameDescriptionMainPartView: View {
     
     // MARK: - Properties and constants
-    let publisher: PassthroughSubject<Void, Never>
+    let subject: PassthroughSubject<Void, Never>
     
     // MARK: - Body
     var body: some View {
         VStack(spacing: 48) {
             LogoAndTitleView()
-            Text("onboarding_description".localize)
+            Text("onboarding_description".localized())
                 .frame(alignment: .topLeading)
                 .multilineTextAlignment(.leading)
                 .font(.sfPro(ofSize: 16))
@@ -25,11 +25,11 @@ struct GameDescriptionMainPartView: View {
                 .frame(width: 300)
                 .padding(.top, 4)
                 .padding(.bottom, 20)
-            CustomButton(text: "onboarding_title_button".localize,
+            CustomButton(text: "onboarding_title_button".localized(),
                          imageName: "ForwardArrow",
                          imageSide: .right,
                          completionHandler: {
-                publisher.send(())
+                subject.send(())
             })
         }
         .ignoresSafeArea()
@@ -39,5 +39,5 @@ struct GameDescriptionMainPartView: View {
 
 // MARK: - PreviewProvider
 #Preview {
-    GameDescriptionMainPartView(publisher: PassthroughSubject<Void, Never>())
+    GameDescriptionMainPartView(subject: PassthroughSubject<Void, Never>())
 }

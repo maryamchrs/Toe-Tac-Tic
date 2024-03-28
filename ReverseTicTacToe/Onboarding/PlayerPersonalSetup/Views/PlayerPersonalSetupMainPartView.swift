@@ -19,7 +19,7 @@ struct PlayerPersonalSetupMainPartView<ViewModel: PlayerPersonalSetupViewModel>:
             LogoAndTitleView()
             Spacer()
                 .frame(height: 80 - 16)
-            Text("player_personal_setup_description".localize)
+            Text("player_personal_setup_description".localized())
                 .multilineTextAlignment(.leading)
                 .font(.sfPro(ofSize: 16))
                 .frame(width: 300, alignment: .topLeading)
@@ -31,7 +31,7 @@ struct PlayerPersonalSetupMainPartView<ViewModel: PlayerPersonalSetupViewModel>:
             optionView
                 .padding(.bottom, 52)
             
-            CustomButton(text: "start_the_game".localize,
+            CustomButton(text: "start_the_game".localized(),
                          imageName: "ForwardArrow",
                          imageSide: .right,
                          completionHandler: {
@@ -63,7 +63,7 @@ private extension PlayerPersonalSetupMainPartView {
     }
     
     var nickNameTextFeild: some View {
-        TextField("nickname".localize,
+        TextField("nickname".localized(),
                   text: $viewModel.playerName)
             .disableAutocorrection(true)
             .padding(.leading, 16)
@@ -79,5 +79,5 @@ private extension PlayerPersonalSetupMainPartView {
 
 // MARK: - Preview
 #Preview {
-    PlayerPersonalSetupMainPartView(viewModel: PlayerPersonalSetupViewModel(storageManager: StorageManager()))
+    PlayerPersonalSetupMainPartView(viewModel: PlayerPersonalSetupViewModel(storageManager: UserDefaultsBasedStorageManager()))
 }

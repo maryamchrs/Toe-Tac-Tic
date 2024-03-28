@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-final class ViewFactory {
+enum ViewFactory {
     
-    static let storageManager: StorageManager = StorageManager()
+    static let storageManager: StorageManager = UserDefaultsBasedStorageManager()
     
     @ViewBuilder
-    static func MakeGameDescriptionView() -> some View {
+    static func makeGameDescriptionView() -> some View {
         GameDescriptionView(viewModel: GameDescriptionViewModel(storageManager: ViewFactory.storageManager))
     }
     

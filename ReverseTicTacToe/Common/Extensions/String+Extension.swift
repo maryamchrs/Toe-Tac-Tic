@@ -9,20 +9,20 @@ import Foundation
 
 extension String {
     
-    var localize: String {
-        return NSLocalizedString(self, tableName: "Localizable", bundle: Bundle.main, value: "", comment: "")
+    func localized() -> String {
+        NSLocalizedString(self, tableName: "Localizable", bundle: Bundle.main, value: "", comment: "")
     }
     
-    func localizedWithArgs(_ args: [CVarArg]) -> String {
-        return String(format: self.localize, arguments: args)
+    func localized(withArgs args: [CVarArg]) -> String {
+        String(format: self.localized(), arguments: args)
     }
     
-    func localizedWithLang(_ lang: String) -> String {
-        return NSLocalizedString(self, tableName: lang, bundle: Bundle.main, value: "", comment: "")
+    func localized(withLang lang: String) -> String {
+        NSLocalizedString(self, tableName: lang, bundle: Bundle.main, value: "", comment: "")
     }
     
-    func localizedWithLangAndArgs(_ lang: String, _ args: [CVarArg]) -> String {
-        return String.init(format: self.localizedWithLang(lang), args)
+    func localized(withLang lang: String, andArgs args: [CVarArg]) -> String {
+        String(format: self.localized(withLang: lang), args)
     }
     
 }

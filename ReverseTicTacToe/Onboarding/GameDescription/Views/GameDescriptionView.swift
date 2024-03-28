@@ -19,12 +19,12 @@ struct GameDescriptionView<ViewModel: GameDescriptionViewModel>: View {
         ZStack {
             PlaygroundBackground()
             VStack {
-                GameDescriptionMainPartView(publisher: viewModel.continueFlowPublisher)
+                GameDescriptionMainPartView(subject: viewModel.continueFlowSubject)
                 Spacer()
             }
             .padding(.top, Constants.topSpacing)
         }
-        .onReceive(viewModel.continueFlowPublisher) { _ in
+        .onReceive(viewModel.continueFlowSubject) { _ in
             coordinator.routeToPlayerPersonalSetupView()
         }
         .toolbar(.hidden, for: .navigationBar)
@@ -37,6 +37,6 @@ private extension GameDescriptionView {}
 // MARK: - PreviewProvider
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        GameDescriptionView(viewModel: GameDescriptionViewModel(storageManager: StorageManager()))
+        GameDescriptionView(viewModel: GameDescriptionViewModel(storageManager: UserDefaultsBasedStorageManager()))
     }
 }
