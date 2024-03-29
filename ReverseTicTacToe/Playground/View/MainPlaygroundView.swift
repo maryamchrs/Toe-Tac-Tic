@@ -28,7 +28,7 @@ struct MainPlaygroundView<ViewModel: MainPlaygroundViewModelProtocol>: View {
                 
                 Spacer()
                 
-                CustomButton(text: "new_game".localize,
+                CustomButton(text: "new_game".localized(),
                              imageName: "ForwardArrow",
                              imageSide: .right,
                              completionHandler: {

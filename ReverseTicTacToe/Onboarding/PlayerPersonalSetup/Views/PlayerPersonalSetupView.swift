@@ -37,5 +37,5 @@ struct PlayerPersonalSetupView: View {
 
 // MARK: - Preview
 #Preview {
-    PlayerPersonalSetupView(viewModel: PlayerPersonalSetupViewModel(storageManager: StorageManager()))
+    PlayerPersonalSetupView(viewModel: PlayerPersonalSetupViewModel(storageManager: UserDefaultsBasedStorageManager()))
 }
