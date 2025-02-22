@@ -9,9 +9,9 @@ import Foundation
 
 extension Array where Element == Int {
     
-    func removingCommonElements(with secendArray: [Int]) -> [Int] {
+    func removingCommonElements(with secondArray: [Int]) -> [Int] {
         var uniqueElementArray = [Int]()
-        let aSet = Set(secendArray)
+        let aSet = Set(secondArray)
         
         for number in self where !aSet.contains(number) {
             uniqueElementArray.append(number)
